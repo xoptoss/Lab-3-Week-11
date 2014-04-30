@@ -2,9 +2,10 @@ package mainPackage;
 import java.util.Random;
 public class dice {
 
-	int value,newValue,total,newBounces;
+	private int newValue,total,newBounces;
+	int value;	
 	Random random = new Random();
-	
+
 	public dice(int Bounces)
 	{
 		Bounces = newBounces;
@@ -12,22 +13,22 @@ public class dice {
 
 	public int Throw(int Bounces)
 	{			
-		total=Bounces;		
+		Bounces=total;		
 		do
 		{
-			newValue = random.nextInt(6)+1;
-			value=value+newValue;
-			Bounces--;		
+			value = newValue+random.nextInt(6)+1;			
+			total--;		
 		}while(Bounces>0);	
-
-		newValue = value/total;	
+		newValue = value/Bounces;	
 		return newValue;
 	}
+
 	public int Throw()
-		{
-			newValue = random.nextInt(6)+1;
-			return newValue;
-		}
+	{
+		newValue = random.nextInt(6)+1;
+		return newValue;
+	}
+
 	public int Value()
 	{
 		value = newValue;
