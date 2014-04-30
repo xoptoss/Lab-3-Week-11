@@ -2,24 +2,28 @@ package mainPackage;
 import java.util.Random;
 public class dice {
 
-	private int newValue,total,newBounces;
-	int value;	
-	Random random = new Random();
+	int newValue,total,newBounces;
+	int value,Bounces;
 
-	public dice(int Bounces)
+	static Random random = new Random();
+
+	public dice(int newBounces)
 	{
 		Bounces = newBounces;
 	}
 
 	public int Throw(int Bounces)
 	{			
-	total=Bounces;			
+		
+		total=Bounces;		
 		do
 		{
-			value = newValue+random.nextInt(6)+1;			
+			value = value+random.nextInt(6)+1;							
 			total--;		
 		}while(total>0);	
+
 		newValue = value/Bounces;	
+
 		return newValue;
 	}
 
