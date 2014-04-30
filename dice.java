@@ -18,7 +18,7 @@ public class dice {
 		{
 			value = newValue+random.nextInt(6)+1;			
 			total--;		
-		}while(Bounces>0);	
+		}while(total>0);	
 		newValue = value/Bounces;	
 		return newValue;
 	}
