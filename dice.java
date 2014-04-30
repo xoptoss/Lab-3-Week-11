@@ -13,7 +13,7 @@ public class dice {
 
 	public int Throw(int Bounces)
 	{			
-		Bounces=total;		
+	total=Bounces;			
 		do
 		{
 			value = newValue+random.nextInt(6)+1;			
